@@ -78,101 +78,9 @@ CareerPilot/
 
 ---
 
-## ⚙️ Getting Started
-
-### Prerequisites
-
-- **Node.js** (v18 or later)
-- **PostgreSQL** (running locally or remote)
-- **npm** or **yarn**
-
----
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-username/CareerPilot.git
-cd CareerPilot
-```
-
----
-
-### 2. Backend Setup
-
-```bash
-cd backend
-npm install
-```
-
-#### Configure Environment Variables
-
-Create a `.env` file in the `backend/` directory:
-
-```env
-DATABASE_URL="postgresql://<user>:<password>@localhost:5432/career_pilot?schema=public"
-JWT_SECRET="your_super_secret_key"
-```
-
-#### Run Database Migrations
-
-```bash
-npx prisma migrate deploy
-```
-
-> Or to apply schema without migration history (development):
-> ```bash
-> npx prisma db push
-> ```
-
-#### Start the Backend Dev Server
-
-```bash
-npm run dev
-```
-
-The API will be available at **http://localhost:5000**
-
----
-
-### 3. Frontend Setup
-
-```bash
-cd ../frontend
-npm install
-```
-
-#### Start the Frontend Dev Server
-
-```bash
-npm run dev
-```
-
-The app will be available at **http://localhost:5174**
-
----
-
 ## 🔌 API Reference
 
 ### Base URL: `http://localhost:5000/api`
-
-All application routes require the `Authorization: Bearer <token>` header.
-
-#### Auth
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/auth/register` | Register a new user |
-| `POST` | `/auth/login` | Log in and receive a JWT |
-
-#### Applications
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/applications` | Get all applications for logged-in user |
-| `POST` | `/applications` | Add a new application |
-| `PATCH` | `/applications/:id` | Update an application |
-| `DELETE` | `/applications/:id` | Delete an application |
-| `GET` | `/applications/stats` | Get pipeline stats (counts per status) |
 
 ---
 
@@ -212,27 +120,6 @@ enum ApplicationStatus {
 
 ---
 
-## 📜 Available Scripts
-
-### Backend (`/backend`)
-
-| Script | Description |
-|--------|-------------|
-| `npm run dev` | Start dev server with hot reload (tsx watch) |
-| `npm run build` | Compile TypeScript to JavaScript |
-| `npm run start` | Run compiled production server |
-
-### Frontend (`/frontend`)
-
-| Script | Description |
-|--------|-------------|
-| `npm run dev` | Start Vite dev server |
-| `npm run build` | Type-check & build for production |
-| `npm run lint` | Lint with oxlint |
-| `npm run preview` | Preview production build |
-
----
-
 ## 🔒 Authentication Flow
 
 1. **Register** → Creates a user account with a bcrypt-hashed password. Automatically redirects to the Login page with the registered email pre-filled.
@@ -240,20 +127,3 @@ enum ApplicationStatus {
 3. **Dashboard** → JWT is stored in `localStorage` and attached to all API requests via an Axios interceptor.
 4. **Logout** → Clears JWT and user data from `localStorage`, redirects to landing page.
 
----
-
-## 🚀 Production Build
-
-```bash
-# Build frontend
-cd frontend && npm run build
-
-# Build backend
-cd ../backend && npm run build && npm run start
-```
-
----
-
-## 📄 License
-
-MIT
