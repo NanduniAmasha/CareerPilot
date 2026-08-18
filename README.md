@@ -1,6 +1,6 @@
 # CareerPilot 🚀
 
-A full-stack job application tracker built with **React**, **Node.js/Express**, **PostgreSQL**, and **Prisma**. CareerPilot helps job seekers organize every opportunity, monitor their interview pipeline, and take the stress out of the job hunt.
+A full-stack job application tracker built with **React**, **Node.js/Express**, **PostgreSQL**, and **Prisma**. CareerPilot helps job seekers organize every opportunity, monitor their interview pipeline, and take the stress out of the job hunt. The backend is built as a REST API and tested using **Postman**.
 
 ---
 
@@ -20,27 +20,27 @@ A full-stack job application tracker built with **React**, **Node.js/Express**, 
 ## 🛠️ Tech Stack
 
 ### Frontend
-| Tool | Version |
-|------|---------|
-| React | 19 |
-| TypeScript | 6 |
-| Vite | 8 |
-| Tailwind CSS | 4 |
-| Lucide React | Icons |
-| Axios | HTTP client |
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS 4
+- Axios
+- Lucide React
 
 ### Backend
-| Tool | Version |
-|------|---------|
-| Node.js | — |
-| Express | 5 |
-| TypeScript | 7 |
-| Prisma ORM | 7 |
-| PostgreSQL | — |
-| JSON Web Tokens (JWT) | Auth |
-| bcryptjs | Password hashing |
-| Zod | Request validation |
+- Node.js
+- Express 5
+- TypeScript
+- REST API
+- Prisma ORM
+- PostgreSQL
+- JSON Web Tokens (JWT)
+- bcryptjs
+- Zod
 
+**API Testing**
+- Postman
+  
 ---
 
 ## 📁 Project Structure
