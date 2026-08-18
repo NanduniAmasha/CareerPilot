@@ -82,25 +82,6 @@ CareerPilot/
 
 ### Base URL: `http://localhost:5000/api`
 
-All application routes require the `Authorization: Bearer <token>` header.
-
-#### Auth
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/auth/register` | Register a new user |
-| `POST` | `/auth/login` | Log in and receive a JWT |
-
-#### Applications
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/applications` | Get all applications for logged-in user |
-| `POST` | `/applications` | Add a new application |
-| `PATCH` | `/applications/:id` | Update an application |
-| `DELETE` | `/applications/:id` | Delete an application |
-| `GET` | `/applications/stats` | Get pipeline stats (counts per status) |
-
 ---
 
 ## 🗄️ Database Schema
@@ -139,27 +120,6 @@ enum ApplicationStatus {
 
 ---
 
-## 📜 Available Scripts
-
-### Backend (`/backend`)
-
-| Script | Description |
-|--------|-------------|
-| `npm run dev` | Start dev server with hot reload (tsx watch) |
-| `npm run build` | Compile TypeScript to JavaScript |
-| `npm run start` | Run compiled production server |
-
-### Frontend (`/frontend`)
-
-| Script | Description |
-|--------|-------------|
-| `npm run dev` | Start Vite dev server |
-| `npm run build` | Type-check & build for production |
-| `npm run lint` | Lint with oxlint |
-| `npm run preview` | Preview production build |
-
----
-
 ## 🔒 Authentication Flow
 
 1. **Register** → Creates a user account with a bcrypt-hashed password. Automatically redirects to the Login page with the registered email pre-filled.
@@ -167,20 +127,3 @@ enum ApplicationStatus {
 3. **Dashboard** → JWT is stored in `localStorage` and attached to all API requests via an Axios interceptor.
 4. **Logout** → Clears JWT and user data from `localStorage`, redirects to landing page.
 
----
-
-## 🚀 Production Build
-
-```bash
-# Build frontend
-cd frontend && npm run build
-
-# Build backend
-cd ../backend && npm run build && npm run start
-```
-
----
-
-## 📄 License
-
-MIT
